@@ -15,4 +15,4 @@ ipython = get_ipython()
 ipython.magic("load_ext autoreload")
 ipython.magic("autoreload 2")
 
-pymol.finish_launching()
+pymol.finish_launching(args=['pymol', '-x']) # no external gui
