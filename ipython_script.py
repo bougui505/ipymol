@@ -8,6 +8,7 @@
 from IPython import get_ipython
 import pymol
 from pymol import cmd
+from pymol.cmd import *
 import numpy
 
 ipython = get_ipython()
