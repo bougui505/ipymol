@@ -10,6 +10,9 @@ import pymol
 from pymol import cmd
 from pymol.cmd import *
 import numpy
+import sys
+sys.path.append('/home/bougui/source/pymol_plugins/pymol_isosurface')
+import mrcutils
 
 ipython = get_ipython()
 ipython.magic("load_ext autoreload")
