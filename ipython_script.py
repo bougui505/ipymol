@@ -9,6 +9,7 @@ from IPython import get_ipython
 import pymol
 from pymol import cmd
 from pymol.cmd import *
+import chempy
 import numpy
 import sys
 sys.path.append('/home/bougui/source/pymol_plugins/pymol_isosurface')
@@ -19,3 +20,14 @@ ipython.magic("load_ext autoreload")
 ipython.magic("autoreload 2")
 
 pymol.finish_launching(args=['pymol', '-x']) # no external gui
+
+def pseudoatoms(coords, objectname):
+    """
+    Add multiple pseudoatoms as object
+    """
+    model = chempy.models.Indexed()
+    for c in coords:
+        atom = chempy.Atom()
+        atom.coord = c
+        model.add_atom(atom)
+    cmd.load_model(model, objectname)
