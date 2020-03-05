@@ -11,6 +11,7 @@ from pymol import cmd
 from pymol.cmd import *
 import chempy
 import numpy
+import matplotlib.pyplot as plt
 from utils import *
 import sys
 sys.path.append('/home/bougui/source/pymol_plugins/pymol_isosurface')
