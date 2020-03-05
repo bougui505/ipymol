@@ -9,13 +9,17 @@ import chempy
 from pymol import cmd
 
 
-def pseudoatoms(coords, objectname):
+def pseudoatoms(coords, objectname, resids=None):
     """
     Add multiple pseudoatoms as object
     """
     model = chempy.models.Indexed()
-    for c in coords:
+    if resids is None:
+        resids = range(coords.shape[0])
+    for i, c in enumerate(coords):
         atom = chempy.Atom()
         atom.coord = c
+        atom.resi_number = resids[i]
         model.add_atom(atom)
     cmd.load_model(model, objectname)
+    return model
