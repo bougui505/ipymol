@@ -17,6 +17,10 @@ from utils import *
 import sys
 sys.path.append('/home/bougui/source/pymol_plugins/pymol_isosurface')
 from mrcutils import *
+sys.path.append('/home/bougui/source/pymol-psico')
+# -------------------------------- psico module --------------------------------
+import psico.fullinit
+from psico.exporting import *
 
 ipython = get_ipython()
 ipython.magic("load_ext autoreload")
