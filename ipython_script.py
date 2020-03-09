@@ -21,9 +21,15 @@ sys.path.append('/home/bougui/source/pymol-psico')
 # -------------------------------- psico module --------------------------------
 import psico.fullinit
 from psico.exporting import *
+# ------------------------------------- - --------------------------------------
 
 ipython = get_ipython()
 ipython.magic("load_ext autoreload")
 ipython.magic("autoreload 2")
 
 pymol.finish_launching(args=['pymol', '-x']) # no external gui
+
+# --- improve PyMOL performance for many-state objects and long trajectories ---
+# See: https://pymolwiki.org/index.php/Defer_builds_mode
+cmd.set('defer_builds_mode', 3)
+# ------------------------------------- - --------------------------------------
