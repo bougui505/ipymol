@@ -5,6 +5,7 @@
 # https://research.pasteur.fr/en/member/guillaume-bouvier/
 # 2020-02-27 09:00:55 (UTC+0100)
 
+import PyQt5.QtCore
 from IPython import get_ipython
 import pymol
 from pymol import cmd
@@ -21,6 +22,16 @@ sys.path.append('/home/bougui/source/pymol-psico')
 # -------------------------------- psico module --------------------------------
 import psico.fullinit
 from psico.exporting import *
+# ------------------------------------- - --------------------------------------
+
+
+# --------------------- Prevent warning message from PyQt  ---------------------
+# (https://stackoverflow.com/a/25681472/1679629)
+def handler(msg_type, msg_log_context, msg_string):
+    pass
+
+
+PyQt5.QtCore.qInstallMessageHandler(handler)
 # ------------------------------------- - --------------------------------------
 
 ipython = get_ipython()
