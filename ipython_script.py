@@ -17,7 +17,7 @@ plt.ion()  # Interactive mode (non-blocking window)
 from utils import *
 import sys
 sys.path.append('/home/bougui/source/pymol_plugins/pymol_isosurface')
-from mrcutils import *
+from MRC.mrcutils import *
 sys.path.append('/home/bougui/source/pymol-psico')
 # -------------------------------- psico module --------------------------------
 import psico.fullinit
