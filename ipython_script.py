@@ -9,7 +9,7 @@ import PyQt5.QtCore
 from IPython import get_ipython
 import pymol
 from pymol import cmd
-from pymol.cmd import *
+from pymol import cmd as c
 import chempy
 import numpy
 import matplotlib.pyplot as plt
